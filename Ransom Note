@@ -1,0 +1,8 @@
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        dicty = defaultdict(int)
+        for word in magazine:
+            dicty[word]+=1
+        for word in ransomNote: 
+            if dicty[word]==0 : return False 
+            dicty[word]-=1
+        return True   
